@@ -85,7 +85,7 @@ add_subdirectory(SocketCAN/demos)
 
 install(
     DIRECTORY            
-        ${CMAKE_CURRENT_SOURCE_DIR}/vcan            
+        ${CMAKE_CURRENT_SOURCE_DIR}/SocketCAN            
     DESTINATION .
     COMPONENT source
     REGEX "\.git$" EXCLUDE
