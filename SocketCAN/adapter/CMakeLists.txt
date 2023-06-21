@@ -8,7 +8,11 @@ target_link_libraries(SilKitAdapterSocketCAN
         asio
         SilKit::SilKit
 )
-set_target_properties(SilKitAdapterSocketCAN PROPERTIES
+set_target_properties(SilKitAdapterSocketCAN 
+	PROPERTIES
+	#ensure SilKit shared libraries can be loaded
+    INSTALL_RPATH "$ORIGIN"
+    BUILD_RPATH "$ORIGIN"
     RUNTIME_OUTPUT_DIRECTORY $<$<BOOL:ALWAYS>:${SILKIT_ADAPTERS_VCAN_OUTPUT_DIRECTORY}>
 )
 add_custom_command(
